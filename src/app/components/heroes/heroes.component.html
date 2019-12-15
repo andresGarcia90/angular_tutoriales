@@ -1,19 +1,20 @@
-<div class="heroes-cards" fxFlex="25">
+<div class="heroes-cards" fxFlex="20" *ngFor="let heroe of heroes; let i = index">
     <mat-card class="example-card">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            <mat-card-title>{{heroe.nombre}}</mat-card-title>
+            <mat-card-subtitle>{{heroe.casa}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+        <img mat-card-image [src]="heroe.img" [alt]="heroe.nombre">
         <mat-card-content>
             <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+                {{heroe.bio}}
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
+            <!-- <button fxFlex="100" mat-raised-button color="primary">More info</button> -->
+            <a [routerLink]="['/heroe',i]" routerLinkActive="router-link-active" fxFlex="100" mat-raised-button color="primary">More info</a>
         </mat-card-actions>
     </mat-card>
 </div>

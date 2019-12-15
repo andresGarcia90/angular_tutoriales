@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 // Rutas
 import { APP_ROUTING } from './app.routes';
 import { HeroesService } from './services/heroes.service';
+import { HeroeComponent } from './components/heroe/heroe.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HeroesService } from './services/heroes.service';
     NavbarComponent,
     HeroesComponent,
     AboutComponent,
+    HeroeComponent,
   ],
   imports: [
     APP_ROUTING,
